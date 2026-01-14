@@ -1,0 +1,327 @@
+:root {
+    --bg-cream: #FFFDF6;
+    --bg-warm: #FAF6E9;
+    --accent-green-light: #DDEB9D;
+    --accent-green-fresh: #A0C878;
+    --text-charcoal: #2C2C2C;
+    --highlight-magenta: #900C3F;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-cream);
+    color: var(--text-charcoal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--highlight-magenta);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 253, 246, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px; /* Adjust based on logo needs */
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-charcoal);
+}
+
+.nav-links a:hover {
+    color: var(--highlight-magenta);
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-charcoal);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px; /* Offset for navbar */
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--highlight-magenta), var(--accent-green-fresh));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: var(--text-charcoal);
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-green-fresh);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(160, 200, 120, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #8db565;
+}
+
+/* Kites Animation */
+.kite-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.kite {
+    width: 50px;
+    height: 50px;
+    background-color: var(--highlight-magenta);
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 5px 50px 5px 50px; /* Kite shape */
+    opacity: 0.8;
+}
+
+.kite::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 2px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.2);
+    transform: rotate(-45deg);
+}
+
+.k1 {
+    top: 20%;
+    left: 10%;
+    background-color: var(--highlight-magenta);
+    animation: float 6s ease-in-out infinite;
+}
+
+.k2 {
+    top: 40%;
+    right: 15%;
+    background-color: var(--accent-green-fresh);
+    width: 70px;
+    height: 70px;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+.k3 {
+    top: 15%;
+    right: 30%;
+    background-color: #FFC107; /* Pop of yellow */
+    width: 40px;
+    height: 40px;
+    animation: float 5s ease-in-out infinite 1s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-20px) rotate(50deg); }
+    100% { transform: translateY(0) rotate(45deg); }
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+.bg-warm {
+    background-color: var(--bg-warm);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: #666;
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft shadow */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-charcoal);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-charcoal);
+    color: var(--bg-cream);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.center-text {
+    text-align: center;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--highlight-magenta);
+    color: var(--highlight-magenta);
+    padding: 0.7rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background: var(--highlight-magenta);
+    color: white;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Add toggle logic in JS if needed */
+    .mobile-toggle { display: flex; }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITM Makar Sankranti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo-link">
+                <img src="assets/itm_logo.jpg" alt="ITM Logo" class="nav-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#celebration">Celebration</a></li>
+                <li><a href="#wishes">Wishes</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Happy Makar Sankranti</h1>
+            <p>From ITM Family to Yours</p>
+            <a href="#celebration" class="btn-primary">Join the Festivity</a>
+        </div>
+        <div class="kite-container">
+            <div class="kite k1"></div>
+            <div class="kite k2"></div>
+            <div class="kite k3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">The Spirit of Sankranti</h2>
+            <p class="section-desc fade-in-scroll">
+                Celebrating the harvest, the sun, and new beginnings. Let's fly high like the kites in the sky.
+            </p>
+        </div>
+    </section>
+
+    <!-- Celebration Cards -->
+    <section id="celebration" class="section bg-warm">
+        <div class="container">
+            <h2 class="section-title fade-in-scroll">Festive Highlights</h2>
+            <div class="cards-grid">
+                <div class="card fade-in-scroll">
+                    <div class="card-icon">🪁</div>
+                    <h3>Kite Flying</h3>
+                    <p>Soar high with ambitions and dreams. Join us for the grand kite flying event.</p>
+                </div>
+                <div class="card fade-in-scroll">
+                    <div class="card-icon">🍬</div>
+                    <h3>Til-Gul</h3>
+                    <p>"Til gul ghya, god god bola." Spreading sweetness and harmony in our community.</p>
+                </div>
+                <div class="card fade-in-scroll">
+                    <div class="card-icon">☀️</div>
+                    <h3>Sun Salutation</h3>
+                    <p>Welcoming the longer days and the warmth of the sun with gratitude.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="section">
+        <div class="container center-text">
+            <h2 class="section-title fade-in-scroll">Send a Wish</h2>
+            <p class="fade-in-scroll">Share your festive greetings with the ITM family.</p>
+            <button class="btn-secondary fade-in-scroll" id="wishBtn">Send Wishes</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ITM. All Rights Reserved. Happy Makar Sankranti!</p>
+        </div>
+    </footer>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
